@@ -1,3 +1,11 @@
+/**
+ * This function take users and sort them by decending friend count.
+ * 
+ * @param {Array<object>} users - Array of users.
+ * @returns {Array<object>} - Array of users.
+ */
+
+
 const sortByDescendingFriendCount = (users) => {
     //масив усіх користувачів, відсортованих за спаданням 
     //кількостій їх друзів (властивість friends)
