@@ -1,75 +1,35 @@
-// function greet(str, str1) {
+(() => {
+  const refs = {
+    // Додати атрибут data-modal-open на кнопку відкриття
+    openModalBtn: document.querySelector('[data-modal-open]'),
+    // Додати атрибут data-modal-close на кнопку закриття
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    // Додати атрибут data-modal на бекдроп модалки
+    modal: document.querySelector('[data-modal]'),
+  };
 
-// //   console.log(`${str}, ${str1} ${this.username}, your room is ${this.room}!`);
-// // }
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
 
-// // const mango = {
-// //   username: "Mango",
-// //   room: 27
-// // };
-
-// // const poly = {
-// //   username: "Poly",
-// //   room: 191
-// // };
-
-// // const andy = {
-// //     username: "Andy",
-// //     showName: function(username){
-// //         console.log(this.username);
-// //     }
-// // }
-
-// // greet.call(mango, "Hi", "how are you")
-
-// // greet.apply(poly,["Bob","what"])
-
-// // greet.call(andy,"Hey", "How")
-
-
-// const car = {
-//     engine: "3.0",
-// };
-
-// const bmw = Object.create(car);
-// car.mark = "bmw";
-
-// console.log(bmw.mark);
-
-// console.log(car.engine);
-
-
-
-// const carMark = {
-//     name: "Audi",
-// };
-
-// const carModel = Object.create(carMark);
-// carModel.model = "A7";
-
-
-
-
-class Car{
-  brand;
-  #brand;
-  constructor(params) {
-    //this.#brand = brand;
-    this.model = params.model;
-    this.price = params.price;
-    
-  }
-  getBrand(){
-    return this.#brand;
-  }
-  changeBrand(newBrand){
-    this.#brand = newBrand;
+  function toggleModal() {
+    // is-open це клас який буде додаватися/забиратися на бекдроп при натисканні на кнопки
+    refs.modal.classList.toggle('is-open');
   }
 
-}
+  const refsmenu = {
+    // Додати атрибут data-modal-open на кнопку відкриття
+    openModalBtn: document.querySelector('[menu-open]'),
+    // Додати атрибут data-modal-close на кнопку закриття
+    closeModalBtn: document.querySelector('[menu-close]'),
+    // Додати атрибут data-modal на бекдроп модалки
+    modal: document.querySelector('[menu]'),
+  };
 
-// const bmw = new Car("BMW", "X5", 60000);
-// console.log(bmw)
+  refsmenu.openModalBtn.addEventListener('click', toggleMenu);
+  refsmenu.closeModalBtn.addEventListener('click', toggleMenu);
 
-const audi = new Car({brand: "Audi", model: "Q3", price: 36000 });
-console.log(audi)
+  function toggleMenu() {
+    // is-open це клас який буде додаватися/забиратися на бекдроп при натисканні на кнопки
+    refsmenu.modal.classList.toggle('is-open');
+  }
+})();

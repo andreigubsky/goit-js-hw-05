@@ -1,3 +1,10 @@
+/**
+ * This function take users and sort them by decending friend count.
+ * 
+ * @param {Array<object>} users - Array of users.
+ * @returns {Array<object>} - Array of users.
+ */
+
 const clients = [
 	{
     name: "Moore Hensley",

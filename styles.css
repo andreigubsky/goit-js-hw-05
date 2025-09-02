@@ -1,0 +1,12 @@
+.modal{
+    display: none;
+    padding: 50px;
+}
+.menu{
+    display: none;
+    padding: 50px;
+}
+
+.is-open{
+    display: block;
+}

@@ -2,17 +2,18 @@
  * This function take users and sort them by decending friend count.
  * 
  * @param {Array<object>} users - Array of users.
- * @returns {Array<object>} - Array of users.
+ * @returns {Array<object>} - Sorted Array of users desceding friend quantity
  */
 
 
 const sortByDescendingFriendCount = (users) => {
     //масив усіх користувачів, відсортованих за спаданням 
     //кількостій їх друзів (властивість friends)
-    let sortedByAscendingFriends = users.toSorted((countFirst, countSecond)=>countFirst-countSecond);
-    return sortedByAscendingFriends;
+    let sortedByDescendingFriends = users
+    .flatMap(user => user.courses)
+    .toSorted((countFirst, countSecond)=>countFirst.friends-countSecond.friends);
+    return sortedByDescendingFriends;
 }
-
 
 console.log(
     sortByDescendingFriendCount([
